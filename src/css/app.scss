@@ -4,18 +4,21 @@
 }
 body{
   background: #121232;
+  overflow-x: hidden;
+  color: white;
 }
 // Senha
 #Senha{
   border: 1px solid gray;
+  background-image: url(../Arquivo/Senha.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
   width: 80%;
   height: 40em;
   margin: auto;
-  margin-top: 100px;
+
   border-radius: 20px;
-}
-#Palavras{
-  color: white;
 }
 input[type=number]::-webkit-inner-spin-button {
   -webkit-appearance: none;
@@ -49,3 +52,156 @@ input[type=number] {
   margin: auto;
   color: #121232;
 }
+#Palavras{
+  color: wheat;
+  height: 15em;
+  word-wrap: break-word;
+  overflow: auto;
+  font-size: 30px;
+  text-align: center;
+  text-shadow: 1px 2px 2px black;
+}
+#Palavras::-webkit-scrollbar{
+  width: 0;
+}
+#texto{
+  color: white;
+  text-align: center;
+  font-weight: bold;
+  font-style: italic;
+  text-shadow: 1px 2px 2px yellow;
+}
+// Api
+.CaixaTable{
+  border-radius: 10px;
+  width: 100%;
+  margin: auto;
+  margin-top: 20px;
+  background-image: url(../Arquivo/Api.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+.Table{
+  display: inline-table;
+  border: 1px solid black;
+  background-image: url(../Arquivo/Gato.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 50em;
+  border-radius: 20px;
+  margin-left: 20px;
+  margin-bottom: 20px;
+}
+#ContainerTa{
+  color: yellow;
+  overflow: auto;
+}
+#ContainerTa::-webkit-scrollbar{
+  width: 0px;
+}
+#ContainerTa > dir > h1{
+  width: 12.6em;
+  text-align: center;
+  word-wrap: break-word;
+  border: 5px solid transparent;
+  height: 100%;
+  font-size: 35px;
+}
+#TextoInput,#NameInput,.submit-btn{
+  display: block;
+  width: 60em;
+  height: 25px;
+  margin-bottom: 10px;
+  margin: auto;
+  background: yellow;
+  resize: none;
+  border: 2px solid white;
+  color: purple;
+}
+:is(#TextoInput,#NameInput)::placeholder{
+  text-align: center;
+}
+#TextoInput{
+  height: 10em;
+  word-wrap: break-word;
+  border-radius: 10px;
+}
+.submit-btn{
+  margin-top: -10px;
+  border-radius: 20px;
+  color: #121232;
+}
+.input-container{
+  border: 2px solid transparent;
+  width: 80%;
+  margin: auto;
+  margin-top: 20px;
+}
+#DadoText{
+  border: 1px solid transparent;
+  height: 100%;
+  text-align: center;
+  font-size: 15px;
+}
+#DadoText,#ContainerTa > dir > h1{
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-weight: bold;
+  font-style: italic;
+}
+.delete-btn{
+  display: block;
+  margin: auto;
+  border-radius: 20px;
+  color: yellow;
+  background: black;
+  width: 10em;
+  margin-top: 500px;
+  border: 1px solid transparent;
+  text-shadow: 1px 1px 3px white;
+  cursor: pointer;
+}
+// Tempo
+#Tempo{
+  margin: auto;
+  margin-top: 20px;
+  border: 1px solid white;
+  background-image: url(../Arquivo/Tempo.jpg);
+  border-radius: 20px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  text-align: center;
+  width: 40%;
+  height: 100%;
+  color: antiquewhite;
+}
+#Tempo > h1{
+  color: goldenrod;
+  text-shadow: 3px 3px 3px #121232;
+  font-weight: bold;
+  font-style: italic;
+  font-size: 60px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.Pesquisa,.Pesquisa::placeholder{
+  width: 60vh;
+  color: #121232;
+  font-size: 20px;
+  border-radius: 20px;
+  text-align: center;
+  height: 2em;
+  background: goldenrod;
+}
+.location,.date,.temp,.weather{
+  font-size: 50px;
+  color: white;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  text-shadow: 2px 2px 2px #121232;
+}
+:is(.location,.date,.temp,.weather)::first-letter{
+  color: yellow;
+  font-size: 60px;
+}
+// Galaxy

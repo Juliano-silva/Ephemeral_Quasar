@@ -2,27 +2,25 @@
        <div class="Corpo">
            <form  @submit="createDados">
                <div class="input-container">
-                   <label for="nome">Nome</label>
-                   <input type="text" name="name" v-model="nome" placeholder="Nome:">
+                   <input id="NameInput" type="text" name="name" v-model="nome" placeholder="Nome:">
                    <br>
-                   <label for="nome">Texto</label>
-                   <textarea id="nome" name="Texto" v-model="Text" placeholder="Digite seu nome:"/>
-               </div>
-               <div class="input-container">
-                   <input type="submit" class="submit-btn" value="Enviar">
+                   <textarea id="TextoInput" name="Texto" v-model="Text" placeholder="Insira seu Texto:"/>
+                   <br>
+                   <input type="submit" class="submit-btn" value="Enviar"/>
                </div>
            </form>
        </div>
        <div class="CaixaTable">
+        <br>
         <div class="Table" v-for="dadors in dadors" :key="dadors.id">
         <div id="ContainerTa">
-            <dir><h1>{{dadors.nome}}</h1></dir>
-            <dir><p>{{dadors.Text}}</p></dir>
-            <div><button class="delete-btn" @click="deleteDados(dadors.id)">Apagar</button>
+            <dir><h1 id="DadoNome">{{dadors.nome}}</h1></dir>
+            <dir><p id="DadoText">{{dadors.Text}}</p></dir>
+            <div><button class="delete-btn" @click="deleteDados(dadors.id)">Remover</button>
             <br>
           </div>
             </div>
-      </div>
+    </div>
        </div>
 </template>
 <script>
@@ -32,7 +30,6 @@ export default{
         return{
             nome:null,
             Text:null,
-            msg:null,
             dadors:null,
             dadors_id:null,
         }
@@ -45,8 +42,6 @@ export default{
             this.getStatus();
         },
         async deleteDados(id){
-            this.msg = `Pedido removido com sucesso`
-            setTimeout(()=> this.msg="",3000)
             const req = await fetch(`http://localhost:3000/Dados/${id}`,{method:"DELETE"});
             const res = await req.json();
             this.getPedidos();

@@ -1,6 +1,8 @@
 <template>
+    <h1 id="texto">Gerar uma senha</h1>
+    <p id="texto">Salva Automaticamente</p>
 <div id="Senha">
-  <input type="number" id="Number" placeholder="Coloque o tamanho da senha" >
+  <input type="number" id="Number" placeholder="Coloque o tamanho da senha">
   <br>
   <button id="Gerar" v-on:click="Tam()">Gerar uma senha</button>
   <p id="Palavras"></p>
@@ -23,7 +25,7 @@
       const Number = document.getElementById('Number').value
       const palavra = document.getElementById("Palavras")
       const cor = (this.Name(Number))
-      palavra.innerText= cor
+      palavra.innerText= "SUA SENHA É "+cor
       },
     }
   }

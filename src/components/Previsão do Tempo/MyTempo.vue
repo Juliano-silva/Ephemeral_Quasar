@@ -1,37 +1,28 @@
 <template>
-  <div
-      id="app"
-      :class="typeof weather.main !== 'undefined' && weather.main.temp > 16 ? 'warm' : ''"
-  >
-    <main>
-      <div class="search-box">
+  <div id="Tempo">
+  <h1>Previsão do Tempo</h1>
+  <div id="app" :class="typeof weather.main !== 'undefined' && weather.main.temp > 16 ? 'warm' : ''">
         <input
             v-model="query"
             @keypress="fetchWeather"
             type="text"
-            class="search-bar"
+            class="Pesquisa"
             placeholder="Pesquisar ... "
         >
-      </div>
-
-      <div
-          class="weather-wrap"
-          v-if="typeof weather.main !== 'undefined'"
-      >
+      <div class="weather-wrap" v-if="typeof weather.main !== 'undefined'">
         <div class="location-box">
           <div class="location">{{ weather.name }}, {{ weather.sys.country }}</div>
-          <div class="date">{{ dateBuilder() }}</div>
+          <div class="date">DATA{{ dateBuilder() }}</div>
         </div>
 
         <div class="weather-box">
-          <div class="temp">{{ Math.round(weather.main.temp) }} °C</div>
+          <div class="temp">{{ Math.round(weather.main.temp)}}°C</div>
           <div class="weather">{{ weather.weather[0].main }}</div>
         </div>
       </div>
-    </main>
   </div>
+</div>
 </template>
-
 <script>
 export default {
   name: 'App',
@@ -53,7 +44,7 @@ export default {
     },
 
     fetchToAPI() {
-      fetch(`${this.url_base}weather?q=${this.query ? this.query : 'Moscow'}&units=metric&appid=${this.API_KEY}`)
+      fetch(`${this.url_base}weather?q=${this.query ? this.query : 'Pelotas'}&units=metric&appid=${this.API_KEY}`)
           .then(res => res.json())
           .then(this.setResults)
           .catch(err => console.log(err))
@@ -66,9 +57,10 @@ export default {
     dateBuilder() {
       let d      = new Date(),
           date   = d.getDate(),
+          mes    = d.getMonth()+1,
           year   = d.getFullYear();
 
-      return ` ${date} ${year}`
+      return ` ${date}/${mes}/${year}`
     },
   },
 
