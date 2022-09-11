@@ -1,9 +1,9 @@
 <template>
   <q-layout view="lHh Lpr lFf">
-    <q-header elevated>
+    <q-header elevated id="Bk">
       <q-toolbar>
         <q-btn flat dense round icon="menu" aria-label="Menu" @click="toggleLeftDrawer"/>
-        <q-toolbar-title>
+        <q-toolbar-title class="text-center text-gold">
           Ephemeral
         </q-toolbar-title>
       </q-toolbar>
@@ -12,14 +12,9 @@
     <q-drawer
       v-model="leftDrawerOpen"
       show-if-above
-      bordered
+      id="Bk"
     >
-      <q-list>
-        <q-item-label
-          header
-        >
-          Essential Links
-        </q-item-label>
+      <q-list >
 
         <EssentialLink
           v-for="link in essentialLinks"
@@ -29,7 +24,7 @@
       </q-list>
     </q-drawer>
 
-    <q-page-container>
+    <q-page-container >
       <router-view />
     </q-page-container>
   </q-layout>
@@ -41,33 +36,23 @@ import EssentialLink from 'components/EssentialLink.vue'
 
 const linksList = [
   {
-    title: 'Docs',
-    caption: 'quasar.dev',
-    icon: 'school',
-    link: 'MyInterna'
+    title: '2D',
+    link: '/'
   },
   {
-    title: 'Github',
-    caption: 'github.com/quasarframework',
-    icon: 'code',
+    title: 'Noodle',
     link: 'MySenha'
   },
   {
-    title: 'Discord Chat Channel',
-    caption: 'chat.quasar.dev',
-    icon: 'chat',
+    title: 'Ace',
     link: 'MyGalaxy'
   },
   {
-    title: 'Forum',
-    caption: 'forum.quasar.dev',
-    icon: 'record_voice_over',
+    title: 'Russel',
     link: 'MyTempo'
   },
   {
-    title: 'Twitter',
-    caption: '@quasarframework',
-    icon: 'rss_feed',
+    title: 'Mudoc',
     link: 'MyForum'
   }
 ]

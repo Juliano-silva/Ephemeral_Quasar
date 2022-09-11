@@ -1,9 +1,9 @@
 <template>
   <div class="q-pa-md">
-    <q-layout view="lHh Lpr lff" container id="Corpo" class="shadow-2 rounded-borders">
-      <q-header elevated class="bg-cyan-8">
+    <q-layout view="lHh Lpr lff" container id="CorpoGalaxy" class="shadow-3 rounded-borders">
+      <q-header elevated class="bg-purple-9">
         <q-toolbar>
-          <q-toolbar-title>Header</q-toolbar-title>
+          <q-toolbar-title class="text-center text-yellow shadow">Admin Page</q-toolbar-title>
           <q-btn flat @click="drawer = !drawer" round dense icon="menu" />
         </q-toolbar>
       </q-header>
@@ -14,7 +14,7 @@
         :width="200"
         :breakpoint="400"
       >
-        <q-scroll-area style="height: calc(100% - 150px); margin-top: 150px; border-right: 1px solid #ddd">
+        <q-scroll-area style="height: calc(100% - 150px); margin-top: 150px;" class="bg-purple-9">
           <q-list padding>
             <q-item clickable v-ripple>
               <q-item-section avatar>
@@ -28,10 +28,10 @@
 
             <q-item active clickable v-ripple>
               <q-item-section avatar>
-                <q-icon name="star" />
+                <q-icon name="star" class="text-white" />
               </q-item-section>
 
-              <q-item-section>
+              <q-item-section  class="text-white">
                 Star
               </q-item-section>
             </q-item>
@@ -58,18 +58,18 @@
           </q-list>
         </q-scroll-area>
 
-        <q-img class="absolute-top" src="https://cdn.quasar.dev/img/material.png" style="height: 150px">
-          <div class="absolute-bottom bg-transparent">
+        <q-img class="absolute-top" src="https://i.pinimg.com/564x/90/f9/e3/90f9e359e41b33083e6f1383c13fd50b.jpg" style="height: 150px">
+          <div class="absolute-bottom bg-transparent text-yellow">
             <q-avatar size="56px" class="q-mb-sm">
-              <img src="https://cdn.quasar.dev/img/boy-avatar.png">
+              <img src="../../Arquivo/Eu.jpg">
             </q-avatar>
-            <div class="text-weight-bold">Razvan Stoenescu</div>
-            <div>@rstoenescu</div>
+            <div class="text-weight-bold">Juliano Silva de Almeida</div>
+            <div>@ju.liano1841</div>
           </div>
         </q-img>
       </q-drawer>
       <!-- Contéudo -->
-      <q-page-container>
+      <q-page-container id="ContainerConteúdo">
         <MyConteúdoGVue/>
       </q-page-container>
     </q-layout>
@@ -91,10 +91,3 @@ export default defineComponent({
   }
 })
 </script>
-<style>
-  #Corpo{
-    height: 60em;
-    width: 120em;
-    margin: auto;
-  }
-</style>
